@@ -4,167 +4,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/swiper.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/hanssem.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery.drawsvg.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/swiper.js"></script>
     <title>Hanssem</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
 </head>
 
 <body>
+    <div class="backdrop"></div>
     <!-- header -->
     <header>
         <div class="headerInner">
-            <h1><a href="#"><img src="img/logo.png" alt="한샘"></a></h1>
+            <div>
+                <h1><a href="/hanssem/index.html"><img src="img/logo.png" alt="한샘"></a></h1>
 
-            <!-- 모바일 -->
-            <div class="sub mobile">
-                <button type="button">
-                    <a href="#">MY한샘</a>
-                </button>
-                <button type="button">
-                    <a href="#">고객센터</a>
-                </button>
-                <button type="button">
-                    메뉴
-                </button>
-            </div>
-            <!-- /모바일 -->
+                <!-- 모바일 -->
+                <div class="sub">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20">
+                            <path id="MYhanssem_icon"
+                                d="M14,14A5,5,0,1,0,9,9,5,5,0,0,0,14,14Zm0,2.5c-3.337,0-10,1.675-10,5V24H24V21.5C24,18.175,17.337,16.5,14,16.5Z"
+                                transform="translate(-4 -4)" />
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 20">
+                            <path id="center_icon"
+                                d="M11.182,1A8.182,8.182,0,0,0,3,9.182v6.364a2.724,2.724,0,0,0,2.727,2.727H7.07V11H4.818V9.182a6.364,6.364,0,1,1,12.727,0V11H15.267v7.273h2.279v.909H11.182V21h5.455a2.724,2.724,0,0,0,2.727-2.727V9.182A8.182,8.182,0,0,0,11.182,1Z"
+                                transform="translate(-3 -1)" />
+                        </svg>
+                    </a>
+                    <button type="button" class="Btn_icon">
+                        <svg id="openBtn_icon" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                            viewBox="0 0 20 16">
+                            <path id="openBtn_icon" data-name="path 7760"
+                                d="M23775,22433v-2h20v2Zm0-7v-2h20v2Zm0-7v-2h20v2Z"
+                                transform="translate(-23775.002 -22417)" />
+                        </svg>
+                        <svg id="closeBtn_icon" class="vsb" xmlns="http://www.w3.org/2000/svg" width="100%"
+                            height="100%" viewBox="0 0 16 16">
+                            <path id="closeBtn_icon" data-name="path 7759"
+                                d="M23307.014,22432.063l7.047-7.061-7.047-7.059.941-.941,7.047,7.057,7.043-7.057.941.941-7.043,7.059,7.043,7.055-.941.941-7.043-7.053-7.047,7.059Z"
+                                transform="translate(-23307.014 -22417.002)" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- /모바일 -->
 
-            <!-- 메뉴 -->
-            <nav>
-                <h2 class="blind">주메뉴</h2>
-                <div class="navInner clear">
-                    <div class="mobile">
-                        <!-- 검색 -->
-                        <div class="search">
-                            <form action="#" method="get">
-                                <label for="searching">검색어 입력</label>
-                                <input id="searching" type="search" placeholder="검색어를 입력해주세요.">
-                                <button type="submit">검색하기</button>
-                            </form>
-                        </div>
-                        <!-- /검색 -->
-
-                        <div class="log">
-                            <a href="#">
-                                <div>
-                                    <div class="icon"></div>
-                                    <span>로그인</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <div class="icon"></div>
-                                    <span>회원가입</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <ul class="navmenu">
-                        <li>
-                            <a href="#">브랜드스토리</a>
-                            <div class="subWrap">
-                                <div class="subWrapInner clear">
-                                    <ul>
-                                        <li><a href="#">한샘스토리</a></li>
-                                        <li><a href="#">History</a></li>
-                                    </ul>
-                                </div>
+                <!-- 메뉴 -->
+                <nav>
+                    <h2 class="blind">주메뉴</h2>
+                    <div class="navInner">
+                        <div class="mobile">
+                            <!-- 검색 -->
+                            <div class="search">
+                                <form action="#" method="get">
+                                    <label for="searching">검색어 입력</label>
+                                    <input id="searching" type="search" placeholder="검색어를 입력해주세요.">
+                                    <button type="submit">검색하기</button>
+                                </form>
                             </div>
-                        </li>
-                        <li>
-                            <a href="#">스토어</a>
-                            <div class="subWrap">
-                                <div class="subWrapInner clear">
-                                    <ul>
+                            <!-- /검색 -->
+
+                            <div class="log">
+                                <a href="#">
+                                    <div>
+                                        <div class="icon"></div>
+                                        <span>로그인</span>
+                                    </div>
+                                </a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1" height="32" viewBox="0 0 1 32">
+                                    <line id="line_13" data-name="line 13" y2="32" transform="translate(0.5)"
+                                        fill="none" stroke="#7d7d7d" stroke-width="1" />
+                                </svg>
+                                <a href="#">
+                                    <div>
+                                        <div class="icon"></div>
+                                        <span>회원가입</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="navmenu">
+                            <li>
+                                <a href="#">
+                                    브랜드스토리
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10"
+                                        viewBox="0 0 20 10">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
+                                        <li><a href="/hanssem/brandstory.html">한샘스토리</a></li>
+                                        <li><a href="/hanssem/history.html">History</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    스토어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
                                         <li><a href="#">시리즈</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">인테리어</a>
-                            <div class="subWrap">
-                                <div class="subWrapInner clear">
-                                    <ul>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    인테리어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
                                         <li><a href="#">인테리어 패키지</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">홈아이디어</a>
-                            <div class="wrap">
-                                <div class="wrapInner clear">
-                                    <ul>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    홈아이디어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
                                         <li><a href="#">공간X사진</a></li>
                                         <li><a href="#">MAGAZINE</a></li>
-                                    </ul>
-                                </div>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /메뉴 -->
+                <div class="subPcMenu pc">
+                    <div class="loginmenu">
+                        <!-- 로그인 메뉴 -->
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 32">
+                                    <path id="path1" d="M13262.932,8252a1.062,1.062,0,0,1-1.061-1.066v-7.105h2.12v6.038h19.085v-27.733h-19.085v6.038h-2.12v-7.1a1.063,1.063,0,0,1,1.061-1.067h21.205a1.062,1.062,0,0,1,1.06,1.067v29.867a1.061,1.061,0,0,1-1.06,1.066Zm5.874-11.815,3.591-3.161h-14.2v-2.12h14.137l-3.534-3.161,1.413-1.58,6.542,5.854-6.549,5.762Z" transform="translate(-13258.197 -8219.999)"/>
+                                </svg>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- /메뉴 -->
-            <div class="pc">
-                <div class="loginmenu">
-                    <!-- 로그인 메뉴 -->
-                    <a href="#">
-                        <div class="icon"></div>
-                        <span>로그인</span>
-                    </a>
-                    <a href="#">
-                        <div class="icon"></div>
-                        <span>회원가입</span>
-                    </a>
-                    <a href="#">
-                        <div class="icon"></div>
-                        <span>MY한샘</span>
-                    </a>
-                    <a href="#">
-                        <div class="icon"></div>
-                        <span>고객센터</span>
-                    </a>
-                    <!-- /로그인 메뉴 -->
-                </div>
-                <div class="search">
-                    <!-- 검색 -->
-                    <form action="#" method="get">
-                        <fieldset>
-                            <label for="search">검색어 입력</label>
-                            <input id="search" type="search" placeholder="검색어를 입력해주세요.">
+                            <span>로그인</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 38 31.999">
+                                    <path id="signUp" d="M30.333,22.332a8.4,8.4,0,1,0-8.444-8.4A8.421,8.421,0,0,0,30.333,22.332Zm-16.485-1.46v-5.4H10.525v5.4H5V24.2h5.525v5.977h3.323V24.2H19.78V20.872Zm16.485,5.5c-5.637,0-12.667,1.881-12.667,7.468v3.692H43V33.836C43,28.25,35.97,26.369,30.333,26.369Z" transform="translate(-5 -5.529)"/>
+                                </svg>                                  
+                            </div>
+                            <span>회원가입</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+                                    <path id="MY_icon" d="M20,20a8,8,0,1,0-8-8A8,8,0,0,0,20,20Zm0,4c-5.34,0-16,2.68-16,8v4H36V32C36,26.68,25.34,24,20,24Z" transform="translate(-4 -4)"/>
+                                </svg>                                  
+                            </div>
+                            <span>MY한샘</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 32">
+                                    <path id="center_icon" d="M16,1A13.047,13.047,0,0,0,3,14.091V24.273a4.343,4.343,0,0,0,4.333,4.364H9.468V17H5.889V14.091a10.111,10.111,0,1,1,20.222,0V17H22.49V28.636h3.621v1.455H16V33h8.667A4.343,4.343,0,0,0,29,28.636V14.091A13.047,13.047,0,0,0,16,1Z" transform="translate(-3 -1)"/>
+                                </svg>                                  
+                            </div>
+                            <span>고객센터</span>
+                        </a>
+                        <!-- /로그인 메뉴 -->
+                    </div>
+                    <div class="search">
+                        <!-- 검색 -->
+                        <form action="#" method="get">
+                            <label for="searching">검색어 입력</label>
+                            <input id="searching" type="search" placeholder="검색어를 입력해주세요.">
                             <button type="submit">검색하기</button>
-                        </fieldset>
-                    </form>
-                    <!-- /검색 -->
+                        </form>
+                        <!-- /검색 -->
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 비쥬얼 -->
         <div class="visual">
-            <div>
-                <h2><span>가고 싶은 곳,</span>머물고 싶은 곳</h2>
+            <div class="visualInner">
+                <h2><span>가고 싶은 곳, </span>머물고 싶은 곳</h2>
                 <p>
                     <span>이 세상에서 가장 가고 싶고 머물고 싶은 곳이 자신의 집이 될때 건강, 화목, 성공이 시작됩니다.</span>
-                    한샘은 개성 있고 아름다운 생활 공간을 제공하는 것을 통해 건강하고 화목한 가정을 만드는데기여하겠습니다.
+                    한샘은 개성 있고 아름다운 생활 공간을 제공하는 것을 통해 건강하고 화목한 가정을 만드는데 기여하겠습니다.
                 </p>
             </div>
-            <div class="scroll">
-                <svg width="16" height="32">
-                    <g id="mouse_icon" transform="translate(9991.5 -6134)">
-                        <g transform="translate(-9991.5 6134)">
-                            <g>
-                                <path fill="#242424" d="M7,1c3.3,0,6,2.9,6,6.5v11.1c0,3.6-2.7,6.5-6,6.5s-6-2.9-6-6.5V7.5C1,3.9,3.7,1,7,1 M7,0
-                                    C3.1,0,0,3.4,0,7.5v11.1c0,4.1,3.1,7.5,7,7.5s7-3.4,7-7.5V7.5C14,3.4,10.9,0,7,0L7,0z"/>
-                            </g>
-                        </g>
-                        
-                            <line fill="none" stroke="#242424" stroke-linecap="round" stroke-miterlimit="10" x1="-9984.5" y1="6138.4" x2="-9984.5" y2="6142.4"/>
-                        <path d="M-9984.5,6166l-4.1-2.9c-0.1-0.1-0.2-0.3-0.1-0.4c0,0,0.1-0.1,0.1-0.1c0.2-0.1,0.5-0.1,0.7,0
-                            l3.4,2.5l3.4-2.5c0.2-0.1,0.5-0.1,0.7,0c0.1,0.1,0.2,0.3,0.1,0.4c0,0-0.1,0.1-0.1,0.1L-9984.5,6166z"/>
-                    </g>
+            <div class="scroll_icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 36">
+                    <path id="path_7761" data-name="path 7761"
+                        d="M12164.328,26462.965a.074.074,0,0,1-.027-.018l-5.137-2.568a.422.422,0,0,1-.238-.381.448.448,0,0,1,.045-.187.426.426,0,0,1,.576-.193l4.947,2.471,4.953-2.471a.5.5,0,0,1,.193-.047.416.416,0,0,1,.381.24.357.357,0,0,1,.047.188.419.419,0,0,1-.234.381l-5.141,2.576a.189.189,0,0,0-.023,0l-.006.006a.42.42,0,0,1-.17.035A.4.4,0,0,1,12164.328,26462.965Zm-7.828-14.824V26435a8,8,0,1,1,16,0v13.141a8,8,0,0,1-16,0Zm.859-13.141v13.141a7.143,7.143,0,1,0,14.285,0V26435a7.143,7.143,0,0,0-14.285,0Zm6.713,1.43v-5.143h.854v5.143Z"
+                        transform="translate(-12156.5 -26427)" fill="#3d3d3d" />
                 </svg>
             </div>
         </div>
@@ -175,55 +240,61 @@
     <main>
         <!-- philosophy -->
         <section id="philosophy">
+            <div class="bgsvg">
+                <svg id="dbew" xmlns="http://www.w3.org/2000/svg" width="1726.002" height="416.002" viewBox="0 0 1726.002 416.002">
+                    <path id="d" class="dbew" d="M11051.539,11789.641H10895V11378h155.4c31.389,0,60.239,4.727,85.75,14.05,25.2,9.208,47.026,22.857,64.885,40.567,17.921,17.776,31.742,39.55,41.082,64.715,9.52,25.651,14.347,54.751,14.347,86.488,0,31.654-4.821,60.713-14.329,86.368-9.32,25.15-23.1,46.929-40.958,64.729-17.788,17.73-39.5,31.4-64.547,40.635C11111.273,11784.9,11082.645,11789.641,11051.539,11789.641Zm-48.386-319.531v227.424l44.4,0c34.2,0,57.587-7.735,73.609-24.343,17.5-18.139,26.008-47.372,26.008-89.371,0-42.237-8.623-71.506-26.363-89.478-16.319-16.534-40.5-24.235-76.1-24.235Z" transform="translate(-10893 -11375.639)" fill="none" stroke="#fff" stroke-width="4" opacity="0.1"/>
+                    <path id="b" class="dbew" d="M11086.267,11789.641H10895V11378h176.463c23.036,0,43.9,2.468,62,7.334,17.58,4.726,32.667,11.739,44.841,20.846a89.1,89.1,0,0,1,27.283,32.627c6.118,12.633,9.256,26.989,9.327,42.672-.14,22.141-7.768,42.317-22.059,58.35a94.836,94.836,0,0,1-24.93,19.768,113.191,113.191,0,0,1-32.136,11.718v3.979a104.813,104.813,0,0,1,36.826,7.813,94.07,94.07,0,0,1,30.236,19.938,91.358,91.358,0,0,1,20.469,30.654,105.051,105.051,0,0,1,7.529,39.955,109.117,109.117,0,0,1-9.943,46.427,105.042,105.042,0,0,1-28.62,36.727c-12.643,10.463-27.945,18.588-45.485,24.146C11128.611,11786.718,11108.245,11789.641,11086.267,11789.641Zm-27.9-86.989c.361,0,.726,0,1.077,0,18.874,0,33.289-3.691,42.844-10.973,9.385-7.151,14.144-17.808,14.144-31.673,0-29.551-21.067-47.192-56.356-47.192h-56.922v89.835Zm-55.214-239.364v81.873l48.386-.006c31.953,0,51.8-15.685,51.8-40.933s-19.2-40.935-50.1-40.935Z" transform="translate(-10478.236 -11375.639)" fill="none" stroke="#fff" stroke-width="4" opacity="0.1"/>
+                    <path id="e" class="dbew" d="M794.418,413.641h293.728V326.082H902.574V251.6h170.772V164.042H902.574V89.56h186.142V2h-294.3Z" transform="translate(-0.087 0)" fill="none" stroke="#fff" stroke-width="4" opacity="0.1"/>
+                    <path id="w" class="dbew" d="M1248.7,413.641h103.6l71.155-235.386h3.416l71.157,235.386H1602.2L1723.452,2H1602.779l-58.062,258.7H1541.3L1472.993,2H1377.36l-67.739,257.56h-3.416L1248.139,2H1127.46Z" transform="translate(-0.124 0)" fill="none" stroke="#fff" stroke-width="4" opacity="0.1"/>
+                </svg>
+            </div>
             <div class="phInner">
                 <div class="textbox">
                     <h2><b>D</b>esign <b>B</b>eyond <span><b>E</b>ast and <b>W</b>est</span></h2>
                     <p>
-                        한샘은 주거환경 부문 세계 최강기업이 되어 인류발전에 공헌하는 사명을 달성하고자 합니다.
-                        <span>창의적 공간 디자인, 환경친화적 디자인, 디지털 공간 디자인으로 공간을 더욱 아름답고 편리하게 만들어 가겠습니다.</span>
+                        한샘은 주거환경 부문 세계 최강기업이 되어 <span>인류발전에 공헌하는 사명을 달성하고자 합니다.</span>
+                        <span>창의적 공간 디자인, 환경친화적 디자인, 디지털 공간 디자인으로 </span><span>공간을 더욱 아름답고 편리하게 만들어 가겠습니다.</span>
                     </p>
                 </div>
                 <div class="circle_cont">
-                    <ul>
-                        <li>
-                            <div>
-                                <dl>
-                                    <dt>Creative</dt>
-                                        <dd>창의적 공간 디자인으로<span>동북아 시대를 선도</span></dd>
-                                </dl>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <dl>
-                                    <dt>Environment</dt>
-                                        <dd>환경친화적 디자인으로<span>자원의 낭비 절약</span></dd>
-                                </dl>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <dl>
-                                    <dt>Digital</dt>
-                                        <dd>디지털 공간 디자인으로<span>라이프스타일의 변화</span></dd>
-                                </dl>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="circleInner">
+                        <ul>
+                            <li>
+                                <div>
+                                    <p>Creative</p>
+                                    <p>창의적 공간 디자인으로<span>동북아 시대를 선도</span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>Environment</p>
+                                    <p>환경친화적 디자인으로<span>자원의 낭비 절약</span></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>Digital</p>
+                                    <p>디지털 공간 디자인으로<span>라이프스타일의 변화</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="bgimg">
                         <div class="bgdrop"></div>
                     </div>
                 </div>
             </div>
-            <div class="subWrap">
-                <div class="subWrapInner">
-                    <h3>DBEW</h3>
-                    <p>
-                        동서양을 넘어서는 디자인
-                        <span>Design Beyond East and West</span>
-                    </p>
-                    <div>
-                        <a href="#">디자인 철학</a>
+            <div class="subInner">
+                <div class="subWrap">
+                    <div class="subWrapInner">
+                        <h3>DBEW</h3>
+                        <p>
+                            동서양을 넘어서는 디자인
+                            <span>Design Beyond East and West</span>
+                        </p>
+                        <div>
+                            <a href="/hanssem/brandstory.html#phconts">디자인 철학</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,41 +304,44 @@
         <!-- series -->
         <section id="series">
             <div class="seriesInner">
-                <h2>HANSSEM <span>Series</span></h2>
-                <ul class="series_list">
-                    <li><button type="button" class="btn on">샘키즈</button></li>
-                    <li><button type="button" class="btn">샘베딩</button></li>
-                    <li><button type="button" class="btn">스테이</button></li>
-                </ul>
+                <div class="textbox">
+                    <h2>HANSSEM <span>Series</span></h2>
+                    <ul class="series_list">
+                        <li><button type="button" class="btn on">샘키즈</button></li>
+                        <li><button type="button" class="btn">샘베딩</button></li>
+                        <li><button type="button" class="btn">스테이</button></li>
+                    </ul>
+                </div>
                 <div class="series_slider slider ">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <!-- 샘키즈 -->
-                            <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+                            <div class="swiper-slide">
                                 <div class="color_bg">
                                     <div class="left" style="background:#F5F5F5;"></div>
                                     <div class="right" style="background:#E5B86C;"></div>
                                 </div>
-                                <div class="title_box">
-                                    <p class="txt1">KIDS</p>
-                                    <p class="txt2">Series<span>샘키즈</span></p>
+                                <div class="conts">
+                                    <div class="img_area">
+                                        <div class="imgwrap">
+                                        </div>
+                                    </div>
+                                    <div class="title_box">
+                                        <h3 class="txt1">KIDS</h3>
+                                        <p class="txt2">Series<span>샘키즈</span></p>
+                                    </div>
+                                    <div class="link_box">
+                                        <p><span><strong>샘키즈</strong>는</span><br>
+                                            엄마 아빠와 아이가
+                                            <span>함께 행복한 공간</span>
+                                        </p>
+                                        <p>
+                                            #샘키즈 마이룸으로
+                                            <span>감성육아 완성</span>
+                                        </p>
+                                        <a href="#">샘키즈 Series</a>
+                                    </div>
                                 </div>
-                                <div class="link_box">
-                                    <p><strong>샘키즈</strong>는</p>
-                                    <p>
-                                        엄마 아빠와 아이가
-                                        <span>함께 행복한 공간</span>
-                                    </p>
-                                    <p>
-                                        #샘키즈 마이룸으로
-                                        <span>감성육아 완성</span>
-                                    </p>
-                                    <a href="#">샘키즈 Series</a>
-                                </div>
-                                <div class="img_area">
-									<div class="imgwrap">
-									</div>
-								</div>
                             </div>
                             <!-- /샘키즈 -->
                             <!-- 샘베딩 -->
@@ -276,25 +350,26 @@
                                     <div class="left" style="background:#F5F5F5;"></div>
                                     <div class="right" style="background:#AE805C;"></div>
                                 </div>
-                                <div class="title_box">
-                                    <p class="txt1">BED</p>
-                                    <p class="txt2">Series<span>샘베딩</span></p>
+                                <div class="conts">
+                                    <div class="img_area">
+                                        <div class="imgwrap">
+                                        </div>
+                                    </div>
+                                    <div class="title_box">
+                                        <p class="txt1">BED</p>
+                                        <p class="txt2">Series<span>샘베딩</span></p>
+                                    </div>
+                                    <div class="link_box">
+                                        <p><span><strong>샘베딩</strong>은</span><br>
+                                            다양한 도어와
+                                            <span>모듈, 가성비까지</span>
+                                        </p>
+                                        <p>
+                                            올인원 수납 솔루션
+                                        </p>
+                                        <a href="#">샘베딩 Series</a>
+                                    </div>
                                 </div>
-                                <div class="link_box">
-                                    <p><strong>샘베딩</strong>은</p>
-                                    <p>
-                                        다양한 도어와
-                                        <span>모듈, 가성비까지</span>
-                                    </p>
-                                    <p>
-                                        올인원 수납 솔루션
-                                    </p>
-                                    <a href="#">샘베딩 Series</a>
-                                </div>
-                                <div class="img_area">
-									<div class="imgwrap">
-									</div>
-								</div>
                             </div>
                             <!-- /샘베딩 -->
                             <!-- 스테이 -->
@@ -303,25 +378,26 @@
                                     <div class="left" style="background:#F5F5F5;"></div>
                                     <div class="right" style="background:#B4AF8B;"></div>
                                 </div>
-                                <div class="title_box">
-                                    <p class="txt1">STAY</p>
-                                    <p class="txt2">Series<span>스테이</span></p>
+                                <div class="conts">
+                                    <div class="img_area">
+                                        <div class="imgwrap">
+                                        </div>
+                                    </div>
+                                    <div class="title_box">
+                                        <p class="txt1">STAY</p>
+                                        <p class="txt2">Series<span>스테이</span></p>
+                                    </div>
+                                    <div class="link_box">
+                                        <p><span><strong>스테이</strong>는</span><br>
+                                            신혼 필수템!
+                                            <span>취향에 따라 고르는</span>
+                                        </p>
+                                        <p>
+                                            감각적인 드레스룸
+                                        </p>
+                                        <a href="#">스테이 Series</a>
+                                    </div>
                                 </div>
-                                <div class="link_box">
-                                    <p><strong>스테이</strong>는</p>
-                                    <p>
-                                        신혼 필수템!
-                                        <span>취향에 따라 고르는</span>
-                                    </p>
-                                    <p>
-                                        감각적인 드레스룸
-                                    </p>
-                                    <a href="#">스테이 Series</a>
-                                </div>
-                                <div class="img_area">
-									<div class="imgwrap">
-									</div>
-								</div>
                             </div>
                         </div>
                         <div class="swiper-button-next"></div>
@@ -335,22 +411,60 @@
         <!-- Interior -->
         <section id="interior">
             <div class="itInner">
-                <h2>Hanssem Interior</h2>
+                <h2>Hanssem <span>Interior</span></h2>
                 <div class="cont1">
                     <div class="bgimg"></div>
                     <div class="textbox">
-                        <div class="icon"></div>
-                        <h3>우리 집도<span>달라질 수 있어요!</span></h3>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                viewBox="0 0 48.001 48.001">
+                                <path id="interior_icon"
+                                    d="M738.2-3305.058v-48h48v34.722H772.873v2.33h-2.489l-3.7,3.7-.707-.707,2.992-2.991h-.262v-6.362h13.443v-26.366h-2.081v23.313H763.9v-23.313h-2.132v16.247h-9.19v-3.974H757.6v-12.273h-2.136v4.191h-1.981c0,.576,0,1.6,0,2.6a3.549,3.549,0,0,1-3.528,3.374,3.678,3.678,0,0,1-2.578-1.082,3.249,3.249,0,0,1-.987-2.294c0-1.017,0-2.027,0-2.594h-2.021v-4.191H742.48v12.273h3.857v1.417l5.844,4.6-.619.786-5.224-4.113v1.284h-4.091v5.131H749.3a2,2,0,0,1,2,2v.113h.063a2.166,2.166,0,0,1-.063.5v9.821a2.166,2.166,0,0,1,.063.5H751.3v.058a2,2,0,0,1-2,2h-7.051v3.325h26.463v-2.039h4.164v6.013Zm1.008-1h32.658v-4.005h-2.148v2.039H741.238v-25.463h4.092v-1.966h-3.858v-14.281h17.139v14.281h-5.026v1.966h7.176v-16.247h22.4v28.373H769.717v4.355h2.148v-2.33h13.326v-32.714H739.207Zm10.09-7.294a1,1,0,0,0,1-1v-.415a.646.646,0,0,0-.337-.362,1.243,1.243,0,0,0-.5-.12H746.3v1.9Zm-7,0h3v-13h-3Zm7.152-2.9h.015a2.232,2.232,0,0,1,.832.174v-7.5a2.233,2.233,0,0,1-.832.174H746.3v7.151Zm.016-8.152a1.245,1.245,0,0,0,.5-.12.646.646,0,0,0,.337-.362v-.47a1,1,0,0,0-1-1h-3v1.952Zm15.434-2.017h14.172v-10.007H764.9Zm14.172-11.007v-3.026H764.9v3.026Zm-31.678-4.519a2.248,2.248,0,0,0,.7,1.585,2.665,2.665,0,0,0,1.87.789,2.556,2.556,0,0,0,2.528-2.376c0-.992,0-2.019,0-2.594h-5.094C747.394-3343.976,747.395-3342.966,747.393-3341.948Zm31.678.493v-7.28H764.9v7.28Zm-33.7-4.089h9.1v-3.191h-9.1Zm7.668,27.288a5.5,5.5,0,0,1,5.5-5.5,5.5,5.5,0,0,1,5.5,5.5,5.5,5.5,0,0,1-5.5,5.5A5.5,5.5,0,0,1,753.041-3318.256Zm1,0a4.505,4.505,0,0,0,4.5,4.5,4.505,4.505,0,0,0,4.5-4.5,4.5,4.5,0,0,0-4.5-4.5A4.505,4.505,0,0,0,754.041-3318.256Zm14.324-24.244a1,1,0,0,1-1-1v-3.5a1,1,0,0,1,1-1h7a1,1,0,0,1,1,1v3.5a1,1,0,0,1-1,1Zm0-1h7v-3.5h-7Z"
+                                    transform="translate(-738.199 3353.059)" />
+                            </svg>
+
+                        </div>
+                        <h3>우리 집도 <span>달라질 수 있어요!</span></h3>
                         <p>전문가의 손길을 거친<span>다양한 시공사례를 확인해보세요.</span></p>
-                        <a href="#">이동</a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 30 12">
+                                <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                    <g id="arrow_icon-2" data-name="arrow_icon"
+                                        transform="translate(-179.735 -1730.895)">
+                                        <path id="path_10" data-name="path 10" d="M646.159,1906.4H618.7V1904h27.454Z"
+                                            transform="translate(-8.97 -3.306)" />
+                                        <path id="path_11" data-name="path 11"
+                                            d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                            transform="translate(0.727 1.693)" />
+                                    </g>
+                                </g>
+                            </svg></a>
                     </div>
                 </div>
                 <div class="cont2">
                     <div class="textbox">
-                        <div class="icon"></div>
-                        <h3>월 5만원대<span>하루패키지</span></h3>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 48 38">
+                                <path id="packyge_icon"
+                                    d="M2.362,37.435a.5.5,0,0,1-.5-.5V24.662H.623a.573.573,0,0,1-.623-.5V20.331a.572.572,0,0,1,.623-.5h3.41L2.276,18.068a.5.5,0,0,1,0-.713L7.41,12.222a.5.5,0,1,1,.713.713L3.345,17.713l1.91,1.91L21.037,3.841l-1.91-1.91L10.517,10.54A.5.5,0,0,1,9.8,9.827L18.771.861a.5.5,0,0,1,.713,0l2.623,2.623a.5.5,0,0,1,0,.713L20.659,5.646H24.7V.5a.5.5,0,0,1,.5-.5h7.672a.5.5,0,0,1,.5.5V5.646h.961v5.96a.5.5,0,1,1-1.008,0V6.653H19.651L14.525,11.78v8.046H33.334V14.588a.5.5,0,0,1,1.008,0v5.238H47.377a.573.573,0,0,1,.623.5v3.787a.573.573,0,0,1-.623.5h-1.2V36.931a.5.5,0,0,1-.5.5H36.263a.5.5,0,0,1,0-1.008h8.906v-11.8l-18.886.021V36.426h6.737a.5.5,0,0,1,0,1.008h-7.24a.5.5,0,0,1-.5-.5V24.646l-2.58,0V36.931a.5.5,0,0,1-.5.5Zm.5-1.008H21.687V24.65l-11.861.013a.516.516,0,1,1,0-1.008l13.649-.015v-2.8H5.329a.506.506,0,0,1-.145,0H1.247v2.82H6.4a.515.515,0,1,1,0,1.008H2.866ZM24.483,23.638l22.27-.025V20.835H24.483ZM13.516,19.826V12.788L6.478,19.826ZM32.373,5.646V3.831H29.515V5.646Zm-3.867,0V3.831h-2.8V5.646Zm3.867-2.822V1.008H29.515V2.823Zm-3.867,0V1.008h-2.8V2.823Zm2.479,31.021a.5.5,0,0,1-.5-.5V27.749a.5.5,0,0,1,.5-.5H40.4a.5.5,0,0,1,.5.5V33.34a.5.5,0,0,1-.5.5Zm.5-1.008H39.9V28.253H31.488ZM7.447,33.844a.5.5,0,0,1-.5-.5V27.749a.5.5,0,0,1,.5-.5h9.419a.5.5,0,0,1,.5.5V33.34a.5.5,0,0,1-.5.5Zm.5-1.008h8.411V28.253H7.95Zm25.888-1.788a.5.5,0,0,1,0-1.008h3.954a.5.5,0,0,1,0,1.008Zm-23.538,0a.5.5,0,0,1,0-1.008h3.955a.5.5,0,0,1,0,1.008Zm8.97-14.536a.5.5,0,0,1-.5-.5V10.416a.5.5,0,0,1,.5-.5h9.419a.5.5,0,0,1,.5.5v5.591a.5.5,0,0,1-.5.5Zm.5-1.008h8.411V10.921H19.774Zm2.35-1.788a.5.5,0,0,1,0-1.008h3.955a.5.5,0,0,1,0,1.008Z" />
+                            </svg>
+                        </div>
+                        <h3>월 5만원대 <span>하루패키지</span></h3>
                         <p>휴가 다녀올 동안 집이 달라져있다!</p>
-                        <a href="#">이동</a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 30 12">
+                                <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                    <g id="arrow_icon-2" data-name="arrow_icon"
+                                        transform="translate(-179.735 -1730.895)">
+                                        <path id="path_10" data-name="path 10" d="M646.159,1906.4H618.7V1904h27.454Z"
+                                            transform="translate(-8.97 -3.306)" />
+                                        <path id="path_11" data-name="path 11"
+                                            d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                            transform="translate(0.727 1.693)" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
                     </div>
                     <div class="bgimg"></div>
                 </div>
@@ -358,29 +472,49 @@
             <div class="bestInnner">
                 <h3>BEST</h3>
                 <div class="slider">
-                    <div class="swiper mySwiper">
+                    <div class="swiper mySwiper2">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="bgimg"></div>
+                                <div class="bgimg img1"></div>
                                 <div class="textbox">
                                     <p>모던 그레이 키친 패키지</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="bgimg"></div>
+                                <div class="bgimg img2"></div>
                                 <div class="textbox">
                                     <p>모던 크리스탈 화이트 현관 패키지</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="bgimg"></div>
+                                <div class="bgimg img3"></div>
                                 <div class="textbox">
                                     <p>유니크한 감각의 라운지 거실</p>
                                 </div>
                             </div>
+                            <div class="swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>123</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>456</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>789</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-scrollbar"></div>
                     </div>
+                    <div class="swiper-button-next location"></div>
+                    <div class="swiper-button-prev location"></div>
                 </div>
             </div>
         </section>
@@ -388,51 +522,59 @@
 
         <!-- 공간X사진 -->
         <section id="spaceImg">
-            <svg viewBox="0 0 960 1920" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.2"
-                    d="M0.692482 0.701092C507.854 0.971277 918.906 412.19 918.906 919.415C918.906 1426.64 507.854 1837.86 0.692322 1838.13L0.692482 0.701092Z"
-                    stroke="#EFE3CD"></path>
-            </svg>
             <div class="spaceInner">
-                <h2>Hanssem</h2>
-                <h3>공간 X 사진</h3>
-                <p>공간별 인테리어 한눈에 알아보기</p>
-                <a href="#">VIEW MORE</a>
-            </div>
-            <div>
-                <div class="spaceimg1 hoverBox">
-                    <div class="imgbox"></div>
+                <div class="bg">
+                    <svg class="mobile" xmlns="http://www.w3.org/2000/svg" width="1406.151" height="100%" viewBox="0 0 1406.151 100%">
+                        <path id="path_7765" data-name="path 7765" d="M3.652,2.5v2800c773.2,0,1400-626.8,1400-1400C1403.652,630.517,771.529,4.472.006,2.5" transform="translate(0 -0.005)" fill="none" stroke="#efe3cd" stroke-miterlimit="10" stroke-width="5"/>
+                    </svg>
+
+                    <svg class="pc" xmlns="http://www.w3.org/2000/svg" width="965" height="1924" viewBox="0 0 965 1925">
+                        <path id="path_7765" data-name="path 7765" d="M2.506,2.5v1920c530.193,0,960-429.807,960-960,0-529.36-433.456-958.648-962.5-960" transform="translate(0 -0.003)" fill="none" stroke="#efe3cd" stroke-miterlimit="10" stroke-width="5"/>
+                    </svg>
                 </div>
-                <div class="textbox1">
-                    <p>
-                        #한샘 #화장대
-                        #한샘화장대
-                        #화장대추천
-                        #한샘멜로우화장대
-                    </p>
-                    <div class="logo"></div>
+                <div class="spaceTextInner">
+                    <h2>Hanssem</h2>
+                    <h3>공간 X 사진</h3>
+                    <p>공간별 인테리어 <span>한눈에 알아보기</span></p>
+                    <a href="#">VIEW MORE</a>
                 </div>
-                <div class="spaceimg2 hoverBox">
-                    <div class="imgbox"></div>
-                </div>
-                <div class="spaceimg3 hoverBox">
-                    <div class="imgbox"></div>
-                </div>
-                <div class="spaceimg4 hoverBox">
-                    <div class="imgbox"></div>
-                </div>
-                <div class="spaceimg5 hoverBox">
-                    <div class="imgbox"></div>
-                </div>
-                <div class="textbox2">
-                    <p>
-                        한샘이 추천하는
-                        심플&미니멀 스타일
-                    </p>
-                    <a href="#">이동</a>
-                </div>
-                <div class="spaceimg6 pc hoverBox">
-                    <div class="imgbox"></div>
+                <div class="ImgWrap">
+                    <div class="img spaceimg1 hoverBox">침실</div>
+                    <div class="textbox1">
+                        <p>
+                            #한샘 #화장대<br>
+                            #한샘화장대<br>
+                            #화장대추천<br>
+                            #한샘멜로우화장대
+                        </p>
+                        <div class="logo"><img src="img/logo.png" alt="한샘"></div>
+                    </div>
+                    <div class="img spaceimg2 hoverBox">서재</div>
+                    <div class="img spaceimg3 hoverBox">부엌</div>
+                    <div class="img spaceimg4 hoverBox">욕실</div>
+                    <div class="img spaceimg5 hoverBox">거실</div>
+                    <div class="textbox2">
+                        <p>
+                            한샘이 추천하는<br>
+                            심플&미니멀 스타일
+                        </p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 30 12"
+                                fill="#fff">
+                                <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                    <g id="arrow_icon-2" data-name="arrow_icon"
+                                        transform="translate(-179.735 -1730.895)">
+                                        <path id="path_10" data-name="path 10" d="M646.159,1906.4H618.7V1904h27.454Z"
+                                            transform="translate(-8.97 -3.306)" />
+                                        <path id="path_11" data-name="path 11"
+                                            d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                            transform="translate(0.727 1.693)" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="img spaceimg6 pc hoverBox">옷방</div>
                 </div>
             </div>
         </section>
@@ -442,41 +584,126 @@
         <section id="magazine">
             <div class="mgInner">
                 <div class="title">
-                    <h2><span>HANSSEM</span>MAGAZINES</h2>
-                    <div>
+                    <h2>HANSSEM<span>MAGAZINES</span></h2>
+                    <div class="btn">
                         <a href="#">
-                            <p>SSEM Magazine<span>살펴보기</span></p>
-                            <span>이동</span>
+                            <p>SSEM Magazine <span>살펴보기</span></p>
+                            <div class="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 30 12">
+                                    <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                        <g id="arrow_icon-2" data-name="arrow_icon"
+                                            transform="translate(-179.735 -1730.895)">
+                                            <path id="path_10" data-name="path 10"
+                                                d="M646.159,1906.4H618.7V1904h27.454Z"
+                                                transform="translate(-8.97 -3.306)" />
+                                            <path id="path_11" data-name="path 11"
+                                                d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                                transform="translate(0.727 1.693)" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
                         </a>
                     </div>
                 </div>
-                <div class="swiper mySwiper2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="bgimg"></div>
-                            <p>쌤페스타에서 주목해야 할 호텔 침대 TOP 6</p>
-                            <p>한샘 피플의 많은 선택을 받은 베스트 아이템</p>
+                <div class="mgslider">
+                    <div class="swiper mySwiper3">
+                        <div class="swiper-wrapper">
+                            <div class="mgsWrap swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>쌤페스타에서 주목해야 할 <span>호텔 침대 TOP 6</span></p>
+                                    <p>한샘 피플의 많은 선택을 받은 <span>베스트 아이템</span></p>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                            viewBox="0 0 30 12">
+                                            <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                                <g id="arrow_icon-2" data-name="arrow_icon"
+                                                    transform="translate(-179.735 -1730.895)">
+                                                    <path id="path_10" data-name="path 10"
+                                                        d="M646.159,1906.4H618.7V1904h27.454Z"
+                                                        transform="translate(-8.97 -3.306)" />
+                                                    <path id="path_11" data-name="path 11"
+                                                        d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                                        transform="translate(0.727 1.693)" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgsWrap swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>초등학생 책상, 똑똑한 배치와 <span>활용법 꿀팁!</span></p>
+                                    <p>정리전문가 정희숙 대표님이 알려 주는 <span>공부방 인테리어</span></p>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                            viewBox="0 0 30 12">
+                                            <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                                <g id="arrow_icon-2" data-name="arrow_icon"
+                                                    transform="translate(-179.735 -1730.895)">
+                                                    <path id="path_10" data-name="path 10"
+                                                        d="M646.159,1906.4H618.7V1904h27.454Z"
+                                                        transform="translate(-8.97 -3.306)" />
+                                                    <path id="path_11" data-name="path 11"
+                                                        d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                                        transform="translate(0.727 1.693)" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgsWrap swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>아이와 함께하는 <span>푸르른 여름 생활</span></p>
+                                    <p>사계절 꿈이 꽃피는 집, <span>몽화당</span></p>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                            viewBox="0 0 30 12">
+                                            <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                                <g id="arrow_icon-2" data-name="arrow_icon"
+                                                    transform="translate(-179.735 -1730.895)">
+                                                    <path id="path_10" data-name="path 10"
+                                                        d="M646.159,1906.4H618.7V1904h27.454Z"
+                                                        transform="translate(-8.97 -3.306)" />
+                                                    <path id="path_11" data-name="path 11"
+                                                        d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                                        transform="translate(0.727 1.693)" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgsWrap swiper-slide">
+                                <div class="bgimg"></div>
+                                <div class="textbox">
+                                    <p>2022 신제품 데이지 출시</p>
+                                    <p>2022.08.29</p>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                            viewBox="0 0 30 12">
+                                            <g id="arrow_icon" transform="translate(-430 -164.999)">
+                                                <g id="arrow_icon-2" data-name="arrow_icon"
+                                                    transform="translate(-179.735 -1730.895)">
+                                                    <path id="path_10" data-name="path 10"
+                                                        d="M646.159,1906.4H618.7V1904h27.454Z"
+                                                        transform="translate(-8.97 -3.306)" />
+                                                    <path id="path_11" data-name="path 11"
+                                                        d="M630.86,1906.2l-1.457-1.922,5.54-4.067-5.543-4.094,1.463-1.917,8.146,6.016Z"
+                                                        transform="translate(0.727 1.693)" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="bgimg"></div>
-                            <p>쌤페스타에서 주목해야 할 호텔 침대 TOP 6</p>
-                            <p>한샘 피플의 많은 선택을 받은 베스트 아이템</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bgimg"></div>
-                            <p>쌤페스타에서 주목해야 할 호텔 침대 TOP 6</p>
-                            <p>한샘 피플의 많은 선택을 받은 베스트 아이템</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="bgimg"></div>
-                            <p>쌤페스타에서 주목해야 할 호텔 침대 TOP 6</p>
-                            <p>한샘 피플의 많은 선택을 받은 베스트 아이템</p>
-                        </div>
+                        <div class="autoplay-progress"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                    <div class="autoplay-progress"></div>
                 </div>
             </div>
         </section>
@@ -490,32 +717,111 @@
             <div class="top">
                 <h2>HANSSEM</h2>
                 <div class="contact">
-                    <div class="contact-info">
-                        <a class="contact-link" href="#">한샘몰 문의</a>
-                        <div class="contact-btn">
-                            <a class="contact-tell" href="tel:1688-4945">1688-4945</a>
-                            <a class="contact-sns" href="#" target="_blank">sns문의</a>
+                    <div class="contact_info">
+                        <a class="contact_link" href="#">
+                            한샘몰 문의
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10">
+                                <g id="arrow" transform="translate(16622.5 2102)">
+                                    <path id="path_13" data-name="path 13"
+                                        d="M-16620.084-2092.5a.392.392,0,0,1-.293-.133.481.481,0,0,1,0-.643l3.871-4.223-3.871-4.223a.481.481,0,0,1,0-.643.391.391,0,0,1,.588,0l4.168,4.544a.485.485,0,0,1,0,.643l-4.168,4.544A.4.4,0,0,1-16620.084-2092.5Z"
+                                        transform="translate(-2 0.5)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="contact_btn">
+                            <a class="contact_tell" href="tel:1688-4945">1688-4945</a>
+                            <a class="contact_sns" href="#" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g id="kakaotalk_icon" transform="translate(16572 2088)">
+                                        <circle id="circle_16" data-name="circle 16" cx="12" cy="12" r="12"
+                                            transform="translate(-16572 -2088)" fill="#1e1e1e" />
+                                        <g id="kakaotalk" transform="translate(-16604.148 -2321.77)">
+                                            <path id="path_7698" data-name="path 7698"
+                                                d="M60.1,77.391c-2.762,0-5,1.734-5,3.872a3.787,3.787,0,0,0,2.372,3.295c-.1.383-.379,1.386-.434,1.6-.068.266.1.263.209.191.086-.056,1.37-.911,1.924-1.28a6.459,6.459,0,0,0,.928.067c2.761,0,5-1.734,5-3.872s-2.239-3.872-5-3.872"
+                                                transform="translate(-15.949 164.379)" fill="#fff" />
+                                            <g id="group_18514" data-name="group 18514"
+                                                transform="translate(40.426 244.708)">
+                                                <path id="path_7699" data-name="path 7699"
+                                                    d="M106.111,185.048h-1.462a.244.244,0,1,0,0,.487h.475v1.716a.236.236,0,0,0,.072.168.245.245,0,0,0,.171.07h.053a.245.245,0,0,0,.171-.069.236.236,0,0,0,.072-.168v-1.716h.449a.244.244,0,1,0,0-.487Z"
+                                                    transform="translate(-104.4 -185.014)" fill="#7b7b7b" />
+                                                <path id="path_7700" data-name="path 7700"
+                                                    d="M260.252,185.711h-.68v-1.753a.27.27,0,0,0-.54,0v1.889a.253.253,0,0,0,0,.042.221.221,0,0,0,.221.264h.994a.221.221,0,1,0,0-.442Z"
+                                                    transform="translate(-255.028 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7701" data-name="path 7701"
+                                                    d="M322.446,185.791l-.758-.975.685-.671a.229.229,0,0,0,0-.329.241.241,0,0,0-.336,0l-.848.83v-.688a.27.27,0,0,0-.54,0v1.947a.27.27,0,0,0,.54,0v-.6l.154-.151.717.921a.244.244,0,0,0,.338.047A.233.233,0,0,0,322.446,185.791Z"
+                                                    transform="translate(-315.049 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7702" data-name="path 7702"
+                                                    d="M169.594,185.855l-.729-1.953,0,0a.359.359,0,0,0-.341-.206.347.347,0,0,0-.354.246.323.323,0,0,0-.014.032l-.717,1.883a.236.236,0,0,0,.148.3.243.243,0,0,0,.308-.145l.124-.347h1l.124.347a.243.243,0,0,0,.308.145A.236.236,0,0,0,169.594,185.855Zm-1.419-.632.335-.937h.011l.335.936Z"
+                                                    transform="translate(-165.791 -183.694)" fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-info">
-                        <a class="contact-link" href="#">AS 문의</a>
-                        <div class="contact-btn">
-                            <a class="contact-tell" href="tel:1588-0900">1588-0900</a>
-                            <a class="contact-sns" href="#" target="_blank">sns문의</a>
+                    <div class="contact_info">
+                        <a class="contact_link" href="#">
+                            AS 문의
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10">
+                                <g id="arrow" transform="translate(16622.5 2102)">
+                                    <path id="path_13" data-name="path 13"
+                                        d="M-16620.084-2092.5a.392.392,0,0,1-.293-.133.481.481,0,0,1,0-.643l3.871-4.223-3.871-4.223a.481.481,0,0,1,0-.643.391.391,0,0,1,.588,0l4.168,4.544a.485.485,0,0,1,0,.643l-4.168,4.544A.4.4,0,0,1-16620.084-2092.5Z"
+                                        transform="translate(-2 0.5)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="contact_btn">
+                            <a class="contact_tell" href="tel:1588-0900">1588-0900</a>
+                            <a class="contact_sns" href="#" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g id="kakaotalk_icon" transform="translate(16572 2088)">
+                                        <circle id="circle_16" data-name="circle 16" cx="12" cy="12" r="12"
+                                            transform="translate(-16572 -2088)" fill="#1e1e1e" />
+                                        <g id="kakaotalk" transform="translate(-16604.148 -2321.77)">
+                                            <path id="path_7698" data-name="path 7698"
+                                                d="M60.1,77.391c-2.762,0-5,1.734-5,3.872a3.787,3.787,0,0,0,2.372,3.295c-.1.383-.379,1.386-.434,1.6-.068.266.1.263.209.191.086-.056,1.37-.911,1.924-1.28a6.459,6.459,0,0,0,.928.067c2.761,0,5-1.734,5-3.872s-2.239-3.872-5-3.872"
+                                                transform="translate(-15.949 164.379)" fill="#fff" />
+                                            <g id="group_18514" data-name="group 18514"
+                                                transform="translate(40.426 244.708)">
+                                                <path id="path_7699" data-name="path 7699"
+                                                    d="M106.111,185.048h-1.462a.244.244,0,1,0,0,.487h.475v1.716a.236.236,0,0,0,.072.168.245.245,0,0,0,.171.07h.053a.245.245,0,0,0,.171-.069.236.236,0,0,0,.072-.168v-1.716h.449a.244.244,0,1,0,0-.487Z"
+                                                    transform="translate(-104.4 -185.014)" fill="#7b7b7b" />
+                                                <path id="path_7700" data-name="path 7700"
+                                                    d="M260.252,185.711h-.68v-1.753a.27.27,0,0,0-.54,0v1.889a.253.253,0,0,0,0,.042.221.221,0,0,0,.221.264h.994a.221.221,0,1,0,0-.442Z"
+                                                    transform="translate(-255.028 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7701" data-name="path 7701"
+                                                    d="M322.446,185.791l-.758-.975.685-.671a.229.229,0,0,0,0-.329.241.241,0,0,0-.336,0l-.848.83v-.688a.27.27,0,0,0-.54,0v1.947a.27.27,0,0,0,.54,0v-.6l.154-.151.717.921a.244.244,0,0,0,.338.047A.233.233,0,0,0,322.446,185.791Z"
+                                                    transform="translate(-315.049 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7702" data-name="path 7702"
+                                                    d="M169.594,185.855l-.729-1.953,0,0a.359.359,0,0,0-.341-.206.347.347,0,0,0-.354.246.323.323,0,0,0-.014.032l-.717,1.883a.236.236,0,0,0,.148.3.243.243,0,0,0,.308-.145l.124-.347h1l.124.347a.243.243,0,0,0,.308.145A.236.236,0,0,0,169.594,185.855Zm-1.419-.632.335-.937h.011l.335.936Z"
+                                                    transform="translate(-165.791 -183.694)" fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="family-site">
-                    <a class="family-site-btn" href="#">
-                        <span>Family Stie</span>
-                    </a>
-                    <div class="family-site-cont">
-                        <a class="site-list" href="#" target="_blank">
-                            <span>(주) 한샘</span>
+                    <div class="family_site">
+                        <a class="family_site_btn" href="#;">
+                            + Family Stie
                         </a>
-                        <a class="site-list" href="#" target="_blank">
-                            <span>한샘서비스센터</span>
-                        </a>
+                        <ul>
+                            <li>
+                                <a class="site_list" href="https://company.hanssem.com/main.do" target="_blank"
+                                    title="새창">
+                                    (주) 한샘
+                                </a>
+                            </li>
+                            <li>
+                                <a class="site_list" href="https://as.hanssem.com/main.as" target="_blank" title="새창">
+                                    한샘서비스센터
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -523,7 +829,7 @@
 
             <!-- Left -->
             <div class="left">
-                <div class="cont1">
+                <div class="cont">
                     <h3>브랜드 스토리</h3>
                     <ul>
                         <li>
@@ -534,23 +840,23 @@
                         </li>
                     </ul>
                 </div>
-                <div class="cont2">
+                <div class="cont">
                     <h3>스토어</h3>
                     <ul>
                         <li>
-                            <a href="#">한샘 시리즈</a>
+                            <a href="#">Series</a>
                         </li>
                     </ul>
                 </div>
-                <div class="cont3">
+                <div class="cont">
                     <h3>인테리어</h3>
                     <ul>
                         <li>
-                            <a href="#">인테리어 패키지</a>
+                            <a href="#">Packge</a>
                         </li>
                     </ul>
                 </div>
-                <div class="cont4">
+                <div class="cont">
                     <h3>홈아이디어</h3>
                     <ul>
                         <li>
@@ -566,13 +872,13 @@
 
             <!-- Right -->
             <div class="right">
-                <div class="cont1">
+                <div class="cont">
                     <h3>HANSSEM</h3>
                     <p>경기도 안산시 번영2로 144 / 15418 02.6908.3114</p>
                 </div>
-                <div class="cont2">
+                <div class="cont">
                     <h3>HANSSEM DBEW 디자인센터</h3>
-                    <p>서울특별시 종로구 창덕궁5길 22-8 한샘DBEW 디자인센터</p>
+                    <p>서울특별시 종로구 창덕궁5길 22-8 <span>한샘DBEW 디자인센터</span></p>
                 </div>
             </div>
             <!-- /Right -->
@@ -590,25 +896,6 @@
         </div>
     </footer>
     <!-- /footer -->
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
 </body>
 
 </html>

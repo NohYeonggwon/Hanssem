@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/brandstory.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery.drawsvg.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/sub.js"></script>
+    <script src="js/swiper.js"></script>
+    <title>Hanssem-brandstory</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerInner">
+            <div>
+                <h1><a href="/hanssem/index.html"><img src="img/logo.png" alt="한샘"></a></h1>
+
+                <!-- 모바일 -->
+                <div class="sub">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20">
+                            <path id="MYhanssem_icon"
+                                d="M14,14A5,5,0,1,0,9,9,5,5,0,0,0,14,14Zm0,2.5c-3.337,0-10,1.675-10,5V24H24V21.5C24,18.175,17.337,16.5,14,16.5Z"
+                                transform="translate(-4 -4)" />
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 20">
+                            <path id="center_icon"
+                                d="M11.182,1A8.182,8.182,0,0,0,3,9.182v6.364a2.724,2.724,0,0,0,2.727,2.727H7.07V11H4.818V9.182a6.364,6.364,0,1,1,12.727,0V11H15.267v7.273h2.279v.909H11.182V21h5.455a2.724,2.724,0,0,0,2.727-2.727V9.182A8.182,8.182,0,0,0,11.182,1Z"
+                                transform="translate(-3 -1)" />
+                        </svg>
+                    </a>
+                    <button type="button" class="Btn_icon">
+                        <svg id="openBtn_icon" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                            viewBox="0 0 20 16">
+                            <path id="openBtn_icon" data-name="path 7760"
+                                d="M23775,22433v-2h20v2Zm0-7v-2h20v2Zm0-7v-2h20v2Z"
+                                transform="translate(-23775.002 -22417)" />
+                        </svg>
+                        <svg id="closeBtn_icon" class="vsb" xmlns="http://www.w3.org/2000/svg" width="100%"
+                            height="100%" viewBox="0 0 16 16">
+                            <path id="closeBtn_icon" data-name="path 7759"
+                                d="M23307.014,22432.063l7.047-7.061-7.047-7.059.941-.941,7.047,7.057,7.043-7.057.941.941-7.043,7.059,7.043,7.055-.941.941-7.043-7.053-7.047,7.059Z"
+                                transform="translate(-23307.014 -22417.002)" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- /모바일 -->
+
+                <!-- 메뉴 -->
+                <nav>
+                    <h2 class="blind">주메뉴</h2>
+                    <div class="navInner">
+                        <div class="mobile">
+                            <!-- 검색 -->
+                            <div class="search">
+                                <form action="#" method="get">
+                                    <label for="searching">검색어 입력</label>
+                                    <input id="searching" type="search" placeholder="검색어를 입력해주세요.">
+                                    <button type="submit">검색하기</button>
+                                </form>
+                            </div>
+                            <!-- /검색 -->
+
+                            <div class="log">
+                                <a href="#">
+                                    <div>
+                                        <div class="icon"></div>
+                                        <span>로그인</span>
+                                    </div>
+                                </a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1" height="32" viewBox="0 0 1 32">
+                                    <line id="line_13" data-name="line 13" y2="32" transform="translate(0.5)"
+                                        fill="none" stroke="#7d7d7d" stroke-width="1" />
+                                </svg>
+                                <a href="#">
+                                    <div>
+                                        <div class="icon"></div>
+                                        <span>회원가입</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="navmenu">
+                            <li>
+                                <a href="#">
+                                    브랜드스토리
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10"
+                                        viewBox="0 0 20 10">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
+                                        <li><a href="/hanssem/brandstory.html">한샘스토리</a></li>
+                                        <li><a href="/hanssem/history.html">History</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    스토어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
+                                        <li><a href="#">시리즈</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    인테리어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
+                                        <li><a href="#">인테리어 패키지</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    홈아이디어
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="10.004"
+                                        viewBox="0 0 20 10.004">
+                                        <path id="path_13" data-name="path 13"
+                                            d="M-16619.668-2082.5a.783.783,0,0,1-.586-.267.963.963,0,0,1,0-1.286l7.742-8.448-7.742-8.448a.963.963,0,0,1,0-1.286.782.782,0,0,1,1.176,0l8.338,9.091a.971.971,0,0,1,0,1.285l-8.338,9.091A.791.791,0,0,1-16619.668-2082.5Z"
+                                            transform="translate(-2082.5 16620.5) rotate(90)" />
+                                    </svg>
+                                </a>
+                                <ul class="navsub">
+                                    <div>
+                                        <li><a href="#">공간X사진</a></li>
+                                        <li><a href="#">MAGAZINE</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /메뉴 -->
+                <div class="subPcMenu pc">
+                    <div class="loginmenu">
+                        <!-- 로그인 메뉴 -->
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 32">
+                                    <path id="path1" d="M13262.932,8252a1.062,1.062,0,0,1-1.061-1.066v-7.105h2.12v6.038h19.085v-27.733h-19.085v6.038h-2.12v-7.1a1.063,1.063,0,0,1,1.061-1.067h21.205a1.062,1.062,0,0,1,1.06,1.067v29.867a1.061,1.061,0,0,1-1.06,1.066Zm5.874-11.815,3.591-3.161h-14.2v-2.12h14.137l-3.534-3.161,1.413-1.58,6.542,5.854-6.549,5.762Z" transform="translate(-13258.197 -8219.999)"/>
+                                </svg>
+                            </div>
+                            <span>로그인</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 38 31.999">
+                                    <path id="signUp" d="M30.333,22.332a8.4,8.4,0,1,0-8.444-8.4A8.421,8.421,0,0,0,30.333,22.332Zm-16.485-1.46v-5.4H10.525v5.4H5V24.2h5.525v5.977h3.323V24.2H19.78V20.872Zm16.485,5.5c-5.637,0-12.667,1.881-12.667,7.468v3.692H43V33.836C43,28.25,35.97,26.369,30.333,26.369Z" transform="translate(-5 -5.529)"/>
+                                </svg>                                  
+                            </div>
+                            <span>회원가입</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+                                    <path id="MY_icon" d="M20,20a8,8,0,1,0-8-8A8,8,0,0,0,20,20Zm0,4c-5.34,0-16,2.68-16,8v4H36V32C36,26.68,25.34,24,20,24Z" transform="translate(-4 -4)"/>
+                                </svg>                                  
+                            </div>
+                            <span>MY한샘</span>
+                        </a>
+                        <a href="#">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 26 32">
+                                    <path id="center_icon" d="M16,1A13.047,13.047,0,0,0,3,14.091V24.273a4.343,4.343,0,0,0,4.333,4.364H9.468V17H5.889V14.091a10.111,10.111,0,1,1,20.222,0V17H22.49V28.636h3.621v1.455H16V33h8.667A4.343,4.343,0,0,0,29,28.636V14.091A13.047,13.047,0,0,0,16,1Z" transform="translate(-3 -1)"/>
+                                </svg>                                  
+                            </div>
+                            <span>고객센터</span>
+                        </a>
+                        <!-- /로그인 메뉴 -->
+                    </div>
+                    <div class="search">
+                        <!-- 검색 -->
+                        <form action="#" method="get">
+                            <label for="searching">검색어 입력</label>
+                            <input id="searching" type="search" placeholder="검색어를 입력해주세요.">
+                            <button type="submit">검색하기</button>
+                        </form>
+                        <!-- /검색 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- visual -->
+        <div class="visual">
+            <div class="visualInner">
+                <div>
+                    <h2>HANSSEM STORY</h2>
+                    <p>
+                        1970년도부터 우리나라 주거 환경 변화를 주도해 온 한샘은 
+                        <span>부엌, 욕실, 침실, 거실 등 주택 모든 공간에 가구와 </span> 
+                        <span>기기, 소품, 패브릭, 건자재 등을 제공하는 토털 홈 인테리어 기업입니다.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /visual -->
+    </header>
+    <!-- /header -->
+
+    <main>
+        <!-- hsstory -->
+        <section id="hsstory">
+            <div class="hsstoryInner">
+                <h2 class="blind">Hanssem Story</h2>
+                <div class="bg">
+                    <span>HAN</span>
+                    <span>SSEM</span>
+                    <span>STORY</span>
+                </div>
+                <div class="conts">
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>국내 시장을 이끄는 <span>선두 기업</span></h3>
+                            <p>
+                                1970년 부엌가구 전문 회사로 출발한 한샘은 
+                                입식 부엌의 개념조차 낯설었던 우리 가정에 
+                                새로운 현대식 부엌을 소개하면서 국내 시장을 
+                                이끄는 선두 기업으로 자리 잡았습니다.
+                            </p>
+                            <p>
+                                싱크대라 통칭되던 부엌가구 시장에 
+                                ‘시스템 키친’ ‘인텔리전트 키친’ 이라는 용어를 
+                                처음 도입하면서 비효율적인 부엌을 
+                                편리하고 아름다운 공간으로, 주부만이 아닌 
+                                가족 모두를 위한 제 2의 거실로 제안하는 등 
+                                부엌 문화의 새로운 장을 열었습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>가고 싶은 곳 <span>머물고 싶은 곳</span></h3>
+                            <p>
+                                치열한 경쟁 속에서 살아가는 현대인에게 집은 휴식과 재충전을 할 수 있는 공간입니다. 
+                                또한, 사랑하는 가족들과 화목한 대화를 나눌 수 있는 공간이기도 합니다. 
+                                이러한 집이란 공간이 세상에서 가장 가고 싶고 머물고 싶은 곳이 될 때,
+                                현대인들은 진정한 휴식과 행복을 얻을 수 있게 됩니다.
+                            </p>
+                            <p>
+                                한샘과 함께하면 여러분의 집이 이 세상에 하나밖에 없는 
+                                '개성 있고 아름다운 나만의 집'으로 변합니다.
+                                한샘은 개성 있고 아름다운 생활 공간을 제공하는 것을 통해
+                                건강하고 화목한 가정을 만드는데 기여하겠습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>차별화된 <span>비즈니스 모델</span></h3>
+                            <p>
+                                한샘은 '주거 환경 개선을 통한 인류 발전에 공헌' 이라는 사명 아래 부엌 분야 사업을 통해 확보한 
+                                인테리어 디자인 역량을 바탕으로 침실, 거실, 서재, 자녀방 등에 인테리어 가구를 공급하고 있으며, 
+                                욕실, 창호, 마루 등 건재 아이템까지 주택 내 모든 공간으로 사업영역을 확장하여 차별화된 비즈니스 모델을 선보이고 있습니다.
+                            </p>
+                            <p>
+                                최근에는 건재 패키지 사업, 친환경 신소재 개발, IoT 기술 도입 등 21세기 정보화 사회의 가족 공동체를 위한 
+                                새로운 개념의 주거 환경을 제공하는 데 자원을 투입하고 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>주거 환경 부문 <span>세계 최강 기업</span></h3>
+                            <p>
+                                한샘은 부엌가구는 물론 
+                                종합 가구 인테리어 분야에서도 1위 기업으로서 
+                                업계를 선도 하고 있으며, 특히 부엌가구 부문 
+                                경쟁력은 이미 세계적인 수준으로
+                                평가 받고 있습니다.
+                            </p>
+                            <p>
+                                앞으로 한샘은 각종 경영혁신 활동을 통해 
+                                경쟁력을 더욱 강화함으써
+                                '주거 환경 부문 세계최강 기업'이라는 비전을 
+                                달성할 것입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /hsstory -->
+
+        <!-- philosophy -->
+        <section id="philosophy">
+            <div class="phheader">
+                <div class="phheaderInner">
+                    <div class="textbox">
+                        <h2>철학 / 비전 / 목표</h2>
+                        <p>To be the greatest<br>in living space</p>
+                    </div>
+                </div>
+            </div>
+            <div id="phconts" class="phconts">
+                <div class="phcontsInner">
+                    <h2>Philosophy</h2>
+                    <div class="conts">
+                        <!-- 01 -->
+                        <div class="cont">
+                            <div class="bg">
+                                <div class="bgdrop"></div>
+                            </div>
+                            <div class="contInner">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 60 71.999">
+                                        <path id="icon" d="M341.348,14613.139a1.993,1.993,0,1,1,3.3-2.235,31.677,31.677,0,0,0,52.7,0,1.993,1.993,0,1,1,3.3,2.235,35.648,35.648,0,0,1-59.3,0Zm28.163-6.8v-21.492l-4.351,4.692-1.865-1.659,7.728-8.225,7.681,8.221-1.839,1.663-4.373-4.729v21.528Zm27.84-31.243a31.672,31.672,0,0,0-52.7,0,1.993,1.993,0,1,1-3.3-2.239,35.645,35.645,0,0,1,59.3,0,1.994,1.994,0,1,1-3.3,2.239Z" transform="translate(-341 -14557)" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                <div class="textbox">
+                                    <div>
+                                        <h3>01</h3>
+                                        <div class="contbar"></div>
+                                        <span>Creative</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conthover">
+                                <div class="conthoverInner">
+                                    <div>
+                                        <div>
+                                            <h3>01</h3>
+                                            <strong>
+                                                창의적 공간 디자인으로<br>
+                                                동북아 시대를 선도합니다.
+                                            </strong>
+                                        </div>
+                                        <div>
+                                            <span>Creative</span>
+                                            <p>
+                                                앞으로 세계 경제는 
+                                                한중일 동북아 지역을 중심으로 전개될 것입니다.
+                                                한샘은 동북아 지역의 공통적인 역사적, 문화적 연관성을 연구하여
+                                                새로운 비전으로 시대를 선도할 디자인을 창조하고자 합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /01 -->
+                        <!-- 02 -->
+                        <div class="cont">
+                            <div class="bg">
+                                <div class="bgdrop"></div>
+                            </div>
+                            <div class="contInner">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 60 71.999">
+                                        <path id="icon" d="M341.348,14613.139a1.993,1.993,0,1,1,3.3-2.235,31.677,31.677,0,0,0,52.7,0,1.993,1.993,0,1,1,3.3,2.235,35.648,35.648,0,0,1-59.3,0Zm28.163-6.8v-21.492l-4.351,4.692-1.865-1.659,7.728-8.225,7.681,8.221-1.839,1.663-4.373-4.729v21.528Zm27.84-31.243a31.672,31.672,0,0,0-52.7,0,1.993,1.993,0,1,1-3.3-2.239,35.645,35.645,0,0,1,59.3,0,1.994,1.994,0,1,1-3.3,2.239Z" transform="translate(-341 -14557)" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                <div class="textbox">
+                                    <div>
+                                        <h3>02</h3>
+                                        <div class="contbar"></div>
+                                        <span>Environment</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conthover">
+                                <div class="conthoverInner">
+                                    <div>
+                                        <div>
+                                            <h3>02</h3>
+                                            <strong>
+                                                환경친화적 디자인으로<br>
+                                                자원의 낭비를 줄입니다.
+                                            </strong>
+                                        </div>
+                                        <div>
+                                            <span>Environment</span>
+                                            <p>
+                                                지금은 자원 고갈과 환경 파괴를 최소화 하면서도 발전을 지속할 수 있는
+                                                새로운 패러다임이 필요한 때입니다. 한샘은 환경친화적인 디자인을
+                                                통해 인간과 자연이 서로 조화를 이루는 건강한 사회를 만들고자 합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /02 -->
+                        <!-- 03 -->
+                        <div class="cont">
+                            <div class="bg">
+                                <div class="bgdrop"></div>
+                            </div>
+                            <div class="contInner">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 60 71.999">
+                                        <path id="icon" d="M341.348,14613.139a1.993,1.993,0,1,1,3.3-2.235,31.677,31.677,0,0,0,52.7,0,1.993,1.993,0,1,1,3.3,2.235,35.648,35.648,0,0,1-59.3,0Zm28.163-6.8v-21.492l-4.351,4.692-1.865-1.659,7.728-8.225,7.681,8.221-1.839,1.663-4.373-4.729v21.528Zm27.84-31.243a31.672,31.672,0,0,0-52.7,0,1.993,1.993,0,1,1-3.3-2.239,35.645,35.645,0,0,1,59.3,0,1.994,1.994,0,1,1-3.3,2.239Z" transform="translate(-341 -14557)" fill="#fff"/>
+                                    </svg>
+                                </div>
+                                <div class="textbox">
+                                    <div>
+                                        <h3>03</h3>
+                                        <div class="contbar"></div>
+                                        <span>Digital</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="conthover">
+                                <div class="conthoverInner">
+                                    <div>
+                                        <div>
+                                            <h3>03</h3>
+                                            <strong>
+                                                디지털 공간 디자인으로<br>
+                                                라이프스타일의 변화를 이끕니다.
+                                            </strong>
+                                        </div>
+                                        <div>
+                                            <span>Digital</span>
+                                            <p>
+                                                산업화, 도시화, 정보화가 진전되면서 가족의 기능과 역할이 달라지고
+                                                시간과 공간의 제약에서 자유로워진 현대인의 활동 영역은 점차 확대되고
+                                                있습니다. 한샘은 디지털 환경에 최적화된 디자인을 선보임으로써 현대인이
+                                                보다 편리하고 행복한 삶을 누리도록 돕고자 합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /03 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /philosophy -->
+
+        <!-- vision -->
+        <section id="vision">
+            <div class="visionInner">
+                <h2>HANSSEM의 비전</h2>
+                <p>주거 환경 부문 세계 최강 기업</p>
+                <div class="vision_div">
+                    <p class="logo">
+                        <img src="img/logo.png" alt="">
+                    </p>
+                    <div class="list_div">
+                        <div class="list point1">
+                            <div class="txt_div">DIGITAL</div>
+                        </div>
+                        <div class="list list1">
+                            <div class="txt_div">
+                                <p class="tit">디지털</p>
+                                <p class="txt">
+                                    인테리어 산업의<br>
+                                    디지털 혁신을<br>
+                                    선도하는 기업
+                                </p>
+                            </div>
+                        </div>
+                        <div class="list point2">
+                            <div class="txt_div">EXECUTIVE</div>
+                        </div>
+                        <div class="list list2">
+                            <div class="txt_div">
+                                <p class="tit">경영</p>
+                                <p class="txt">
+                                    세계 정상 수준의<br>
+                                    경영자를 끊임없이<br>
+                                    양성하는 기업
+                                </p>
+                            </div>
+                        </div>
+                        <div class="list point3">
+                            <div class="txt_div">DESIGN</div>
+                        </div>
+                        <div class="list list3"> 
+                            <div class="txt_div">
+                                <p class="tit">디자인</p>
+                                <p class="txt">
+                                    동서양을<br>
+                                    넘어서는<br>
+                                    디자인을<br>
+                                    제공하는 기업
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vision_list_div">
+                    <div class="list">
+                        <div class="img">
+                            <img src="img/brandstory/visionicon1.png" alt="">
+                        </div>
+                        <div class="txt_div">
+                            <p class="tit">디지털</p>
+                            <p class="txt">
+                                인테리어 산업의
+                                디지털 혁신을
+                                선도하는 기업
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="img">
+                            <img src="img/brandstory/visionicon2.png" alt="">
+                        </div>
+                        <div class="txt_div">
+                            <p class="tit">경영</p>
+                            <p class="txt">
+                                세계 정상 수준의
+                                경영자를 끊임없이
+                                양성하는 기업
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="img">
+                            <img src="img/brandstory/visionicon3.png" alt="">
+                        </div>
+                        <div class="txt_div">
+                            <p class="tit">디자인</p>
+                            <p class="txt">
+                                동서양을 넘어서는
+                                디자인을 제공하는 기업
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /vision -->
+
+        <!-- goal -->
+        <section id="goal">
+            <div class="goalInner">
+                <h2>목표</h2>
+                <div class="bgtext"> 
+                    <div class="bgtextInner">
+                        <span>Design</span>
+                        <span>Beyond</span>
+                        <span>East and</span>
+                        <span>West</span>
+                    </div>
+                </div>
+                <div class="conts">
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>국내 시장 <span>10조 달성</span></h3>
+                            <p>
+                                국내 시장 매출 10조를 돌파하여 홈 인테리어 
+                                시장 마켓쉐어 30%를 달성하는 것입니다. 
+                                이를 통해 글로벌 최강 기업에 도전하기 위한 
+                                안정적이고 확고한 기반을 마련할 수 있습니다.
+                            </p>
+                            <p>
+                                건자재와 부엌, 가구, 생활용품을 토탈 홈 인테리어
+                                패키지로 구성하고, 이를 온라인과 오프라인 매장,
+                                B2C와 B2B를 유통함으로써 국내 홈 인테리어
+                                시장 마켓쉐어 30%를 달성하겠습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>세계화 도전 <span>성공모델 완성</span></h3>
+                            <p>
+                                글로벌 한샘에 도전하기 위한 기반을 확립하는
+                                것입니다. 지금까지 국내외에서 축적해온
+                                리모델링 패키지 역량과 온라인 역량을 결합하고,
+                                이를 각 해외시장에 맞게 현지화하여 중국, 미국,
+                                일본, 동남아 등 세계시장을 석권할 수 있는
+                                해외 성공 비즈니스 모델을 완성할 것입니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="img"></div>
+                        <div class="textbox">
+                            <h3>국내 10조, <span>글로벌 100조</span>
+                                경영시스템 구축</h3>
+                            <p>
+                                국내시장 10조 매출을 돌파하고, 
+                                해외시장에서 사업을 확대하기 위해서는 
+                                이에 걸맞은 경영시스템이 필요합니다. 
+                                전략기획실을 강화하여 확대된 매출 규모,
+                                사업영역, 시장을 지원할 수 있는 
+                                선진 경영 체계를 구축할 것입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /goal -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="footerInner">
+            <!-- Top -->
+            <div class="top">
+                <h2>HANSSEM</h2>
+                <div class="contact">
+                    <div class="contact_info">
+                        <a class="contact_link" href="#">
+                            한샘몰 문의
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10">
+                                <g id="arrow" transform="translate(16622.5 2102)">
+                                    <path id="path_13" data-name="path 13"
+                                        d="M-16620.084-2092.5a.392.392,0,0,1-.293-.133.481.481,0,0,1,0-.643l3.871-4.223-3.871-4.223a.481.481,0,0,1,0-.643.391.391,0,0,1,.588,0l4.168,4.544a.485.485,0,0,1,0,.643l-4.168,4.544A.4.4,0,0,1-16620.084-2092.5Z"
+                                        transform="translate(-2 0.5)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="contact_btn">
+                            <a class="contact_tell" href="tel:1688-4945">1688-4945</a>
+                            <a class="contact_sns" href="#" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g id="kakaotalk_icon" transform="translate(16572 2088)">
+                                        <circle id="circle_16" data-name="circle 16" cx="12" cy="12" r="12"
+                                            transform="translate(-16572 -2088)" fill="#1e1e1e" />
+                                        <g id="kakaotalk" transform="translate(-16604.148 -2321.77)">
+                                            <path id="path_7698" data-name="path 7698"
+                                                d="M60.1,77.391c-2.762,0-5,1.734-5,3.872a3.787,3.787,0,0,0,2.372,3.295c-.1.383-.379,1.386-.434,1.6-.068.266.1.263.209.191.086-.056,1.37-.911,1.924-1.28a6.459,6.459,0,0,0,.928.067c2.761,0,5-1.734,5-3.872s-2.239-3.872-5-3.872"
+                                                transform="translate(-15.949 164.379)" fill="#fff" />
+                                            <g id="group_18514" data-name="group 18514"
+                                                transform="translate(40.426 244.708)">
+                                                <path id="path_7699" data-name="path 7699"
+                                                    d="M106.111,185.048h-1.462a.244.244,0,1,0,0,.487h.475v1.716a.236.236,0,0,0,.072.168.245.245,0,0,0,.171.07h.053a.245.245,0,0,0,.171-.069.236.236,0,0,0,.072-.168v-1.716h.449a.244.244,0,1,0,0-.487Z"
+                                                    transform="translate(-104.4 -185.014)" fill="#7b7b7b" />
+                                                <path id="path_7700" data-name="path 7700"
+                                                    d="M260.252,185.711h-.68v-1.753a.27.27,0,0,0-.54,0v1.889a.253.253,0,0,0,0,.042.221.221,0,0,0,.221.264h.994a.221.221,0,1,0,0-.442Z"
+                                                    transform="translate(-255.028 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7701" data-name="path 7701"
+                                                    d="M322.446,185.791l-.758-.975.685-.671a.229.229,0,0,0,0-.329.241.241,0,0,0-.336,0l-.848.83v-.688a.27.27,0,0,0-.54,0v1.947a.27.27,0,0,0,.54,0v-.6l.154-.151.717.921a.244.244,0,0,0,.338.047A.233.233,0,0,0,322.446,185.791Z"
+                                                    transform="translate(-315.049 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7702" data-name="path 7702"
+                                                    d="M169.594,185.855l-.729-1.953,0,0a.359.359,0,0,0-.341-.206.347.347,0,0,0-.354.246.323.323,0,0,0-.014.032l-.717,1.883a.236.236,0,0,0,.148.3.243.243,0,0,0,.308-.145l.124-.347h1l.124.347a.243.243,0,0,0,.308.145A.236.236,0,0,0,169.594,185.855Zm-1.419-.632.335-.937h.011l.335.936Z"
+                                                    transform="translate(-165.791 -183.694)" fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact_info">
+                        <a class="contact_link" href="#">
+                            AS 문의
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10">
+                                <g id="arrow" transform="translate(16622.5 2102)">
+                                    <path id="path_13" data-name="path 13"
+                                        d="M-16620.084-2092.5a.392.392,0,0,1-.293-.133.481.481,0,0,1,0-.643l3.871-4.223-3.871-4.223a.481.481,0,0,1,0-.643.391.391,0,0,1,.588,0l4.168,4.544a.485.485,0,0,1,0,.643l-4.168,4.544A.4.4,0,0,1-16620.084-2092.5Z"
+                                        transform="translate(-2 0.5)" fill="#fff" />
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="contact_btn">
+                            <a class="contact_tell" href="tel:1588-0900">1588-0900</a>
+                            <a class="contact_sns" href="#" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g id="kakaotalk_icon" transform="translate(16572 2088)">
+                                        <circle id="circle_16" data-name="circle 16" cx="12" cy="12" r="12"
+                                            transform="translate(-16572 -2088)" fill="#1e1e1e" />
+                                        <g id="kakaotalk" transform="translate(-16604.148 -2321.77)">
+                                            <path id="path_7698" data-name="path 7698"
+                                                d="M60.1,77.391c-2.762,0-5,1.734-5,3.872a3.787,3.787,0,0,0,2.372,3.295c-.1.383-.379,1.386-.434,1.6-.068.266.1.263.209.191.086-.056,1.37-.911,1.924-1.28a6.459,6.459,0,0,0,.928.067c2.761,0,5-1.734,5-3.872s-2.239-3.872-5-3.872"
+                                                transform="translate(-15.949 164.379)" fill="#fff" />
+                                            <g id="group_18514" data-name="group 18514"
+                                                transform="translate(40.426 244.708)">
+                                                <path id="path_7699" data-name="path 7699"
+                                                    d="M106.111,185.048h-1.462a.244.244,0,1,0,0,.487h.475v1.716a.236.236,0,0,0,.072.168.245.245,0,0,0,.171.07h.053a.245.245,0,0,0,.171-.069.236.236,0,0,0,.072-.168v-1.716h.449a.244.244,0,1,0,0-.487Z"
+                                                    transform="translate(-104.4 -185.014)" fill="#7b7b7b" />
+                                                <path id="path_7700" data-name="path 7700"
+                                                    d="M260.252,185.711h-.68v-1.753a.27.27,0,0,0-.54,0v1.889a.253.253,0,0,0,0,.042.221.221,0,0,0,.221.264h.994a.221.221,0,1,0,0-.442Z"
+                                                    transform="translate(-255.028 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7701" data-name="path 7701"
+                                                    d="M322.446,185.791l-.758-.975.685-.671a.229.229,0,0,0,0-.329.241.241,0,0,0-.336,0l-.848.83v-.688a.27.27,0,0,0-.54,0v1.947a.27.27,0,0,0,.54,0v-.6l.154-.151.717.921a.244.244,0,0,0,.338.047A.233.233,0,0,0,322.446,185.791Z"
+                                                    transform="translate(-315.049 -183.694)" fill="#7b7b7b" />
+                                                <path id="path_7702" data-name="path 7702"
+                                                    d="M169.594,185.855l-.729-1.953,0,0a.359.359,0,0,0-.341-.206.347.347,0,0,0-.354.246.323.323,0,0,0-.014.032l-.717,1.883a.236.236,0,0,0,.148.3.243.243,0,0,0,.308-.145l.124-.347h1l.124.347a.243.243,0,0,0,.308.145A.236.236,0,0,0,169.594,185.855Zm-1.419-.632.335-.937h.011l.335.936Z"
+                                                    transform="translate(-165.791 -183.694)" fill="#7b7b7b" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="family_site">
+                        <a class="family_site_btn" href="#;">
+                            + Family Stie
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="site_list" href="https://company.hanssem.com/main.do" target="_blank"
+                                    title="새창">
+                                    (주) 한샘
+                                </a>
+                            </li>
+                            <li>
+                                <a class="site_list" href="https://as.hanssem.com/main.as" target="_blank" title="새창">
+                                    한샘서비스센터
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Top -->
+
+            <!-- Left -->
+            <div class="left">
+                <div class="cont">
+                    <h3>브랜드 스토리</h3>
+                    <ul>
+                        <li>
+                            <a href="#">한샘 스토리</a>
+                        </li>
+                        <li>
+                            <a href="#">History</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cont">
+                    <h3>스토어</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Series</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cont">
+                    <h3>인테리어</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Packge</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cont">
+                    <h3>홈아이디어</h3>
+                    <ul>
+                        <li>
+                            <a href="#">공간X사진</a>
+                        </li>
+                        <li>
+                            <a href="#">한샘 매거진</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /Left -->
+
+            <!-- Right -->
+            <div class="right">
+                <div class="cont">
+                    <h3>HANSSEM</h3>
+                    <p>경기도 안산시 번영2로 144 / 15418 02.6908.3114</p>
+                </div>
+                <div class="cont">
+                    <h3>HANSSEM DBEW 디자인센터</h3>
+                    <p>서울특별시 종로구 창덕궁5길 22-8 <span>한샘DBEW 디자인센터</span></p>
+                </div>
+            </div>
+            <!-- /Right -->
+
+            <!-- /Bottom -->
+            <div class="bottom">
+                <p>(c) 2023 HANSSEM Co. Ltd. All rights reserved</p>
+                <ul>
+                    <li>개인정보취급방침</li>
+                    <li>홈페이지 이용약관</li>
+                    <li>이메일무단수집거부</li>
+                </ul>
+            </div>
+            <!-- /Bottom -->
+        </div>
+    </footer>
+    <!-- /footer -->
+</body>
+
+</html>
